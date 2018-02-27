@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+body{
+	font-family:Microsoft YaHei ;
+	/*font-family: 'Bungee', cursive;
+	font-family: 'Playfair Display', serif;
+	font-family: 'Lobster', cursive;
+	font-family: 'Indie Flower', cursive;
+	font-family: 'Pacifico', cursive;*/
+
+	color: #000;
+}
+h1{
+	font-size: 40px;
+	line-height: 42px;
+	width: 100%;
+	text-align: left;
+}
+input{
+	width: 390px;
+	height: 34px;
+	padding-left: 9px;
+    border: 1px solid #000;
+    font-size:18px;
+    color: #333;
+    outline:none;
+}
+input:focus{
+	color:#000;
+	border:1px solid #4756CA;
+}
+button{
+	width:402px;
+	height: 40px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 100;
+	border: 1px solid #000;
+	background-color: #000;
+	color: #fff;
+	outline:none;
+}
+button:hover{
+	background-color: #fff;
+	color: #000;
+}
+a{
+	color: #fff;
+	text-decoration:none;
+	border-bottom: 2px solid rgba(0,0,0,0); 
+	opacity: 0.85;
+}
+a:link    {color:#fff;}
+a:visited {color:#fff;text-decoration:none;}
+a:hover   {
+	border-bottom: 2px solid #FF5151;
+	opacity:1;
+}
+a:active  {color:#fff;text-decoration:none;}
+p{
+	font-size: 16px;
+	text-align: left;
+}
+.page1{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+    left:0;
+    top:0;
+    z-index: -1;
+    background-color: rgba(255,255,255,1);
+}
+.page15{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+    left:0;
+    top:0;
+    z-index: -1;
+    background-color: rgba(255,255,255,1);
+}
+.modal {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width:100%;
+	height: 100%;
+	z-index: 1;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+    transition: 200ms ease;
+    overflow: auto;
+    background-color: #fff;  
+}
+.modal.show {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}
+.page2{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+    left:0;
+    top:0;
+    z-index: 0;  
+	background-color: #000;
+	overflow: hidden;
+}
+.leftdown{
+	position: absolute;
+	z-index: 1;
+	bottom: 2%;
+	left: 2%;
+}
+/*============================= page 1 / page 15 ===========================*/
+.content{
+	position: absolute;
+	width: 390px;
+	left: 50%;
+	top:40%;
+	transform: translate(-50%,-50%);
+	text-align:center;
+}
+
+/*============================= page 2 ===========================*/
+.bgBlur{
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+    left:0;
+    top:0;
+    background-color: rgba(0,0,0,0.4);
+}
+.maintext{
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 70px;
+	font-weight: 600;
+	color: #fff;
+}
+.goodtext{
+	position: absolute;
+	left: 50%;
+	bottom: 15%;
+	transform: translateX(-50%);
+	text-align: center;
+	font-family: Georgia !important;
+	font-size: 20px;
+	color:#fff;
+}
+.picInfoUrl{
+	text-align: right;
+	font-size: 16px;
+	position: absolute;
+	z-index: 1;
+	bottom: 2%;
+	right: 2%;
+}
+.todoUrl{
+	font-size: 18px;
+	position: absolute;
+	z-index: 1;
+	top: 2%;
+	right: 2%;
+}
+.bgPic{
+	position: absolute;
+	width: 110%;
+	height: 110%;
+    left:-5%;
+    top:-5%;
+    background-size: cover;
+    background-position: center;
+    background-clip: content-box;
+    z-index: -2;
+}
+/*============================= left down ===========================*/
+.optionsUrl{
+   font-size: 18px;
+   float: left;
+   padding-right: 10px;
+}
+
+.tile {
+	display: inline-block;
+	cursor: pointer;
+	transition: 0.25s ease;
+}
