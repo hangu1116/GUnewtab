@@ -1,0 +1,70 @@
+{
+  "extName": {
+    "message": "Gu New Tab-故新标签页",
+    "description": "描述"
+  },
+  "extDescription": {
+    "message": "利用唯美照片或喜欢的颜色，和个性签名打造一个可定制的新标签页",
+    "description": "描述2"
+  },
+  "extWelcome": {
+    "message": "#欢迎#"
+  },
+  "extWelP": {
+    "message": "初次见面，请多关照!💖"
+  },
+  "extWelBtn": {
+    "message": " 继续 "
+  },
+  "extWelP2": {
+    "message": "你可以随时在设置中更新你的个人签名/提醒事项，使用愉快~ "
+  },
+  "extWelBtn2": {
+    "message": " 完成 "
+  },
+  "extOptions": {
+    "message": "设置"
+  },
+  "extOptTitle": {
+    "message": "#设置#"
+  },
+  "extOptName": {
+    "message": "你的姓名"
+  },
+  "extOptMotto": {
+    "message": "个性签名"
+  },
+  "extOptFontColor": {
+    "message": "文字颜色"
+  },
+  "extOptFontSize": {
+    "message": "字号"
+  },
+  "extOptFontWeight": {
+    "message": "粗细"
+  },
+  "extOptType": {
+    "message": "字体"
+  },
+  "extOptBgModel": {
+    "message": "选择背景模式"
+  },
+  "extOptBgColor": {
+    "message": "颜色背景：颜色选择"
+  },
+  "extOptBgPicture": {
+    "message": "图片背景：图片源选择"
+  },
+  "extOptBlur": {
+    "message": "背景模糊程度"
+  },
+  "extOptEmail": {
+    "message": "遇到问题？提出建议？💌"
+  },
+  "extOptStars": {
+    "message": "在Chrome Webstore给我一个五星好评🌟感谢!"
+  },
+  "extOptBtn": {
+    "message": " 保存 "
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Options</title>
+	<link rel="stylesheet" type="text/css" href="./ostyle.css">
+</head>
+<body>
+	<h1><b>__MSG_extOptTitle__</b></h1>
+	<div class="content"> 
+		<p><b>__MSG_extOptName__</b></p>
+		<input type="text" id="userName" >
+		<p><b>__MSG_extOptMotto__</b></p>
+		<textarea rows="6"  id="bepMain" maxlength="40" placeholder="What's your motto?" wrap="hard"></textarea>
+		<p><b>__MSG_extOptFontColor__</b></p>
+		<input type="text" id="fontColor" class="jscolor" value="FF5151">
+		<p><b>__MSG_extOptFontSize__</b></p>
+		<br>
+		<input type="hidden" class="single-slider" value="23" />
+	</div> 
+	<div class="content">
+		<p><b>__MSG_extOptFontWeight__</b></p>
+		<br>
+		<input type="hidden" class="single-slider2" value="23" />
+		<br>
+		<p><b>__MSG_extOptType__</b></p>
+
+		<form>
+		<select id="fontType">
+			<option value="0">Microsoft Yahei</option>
+			<option value="1">Bungee</option>
+			<option value="2">Playfair Display</option>
+			<option value="3">Lobster</option>
+			<option value="4">Indie Flower</option>
+			<option value="5">Pacifico</option>
+		</select>
+		</form>
+		<p><b>__MSG_extOptBgModel__</b></p>
+		  	<!-- 0是color，1是pic -->
+		    	<div class="chooseNo" id="tf1" value="1">color background</div>
+		    	<div class="tf05">/</div>
+		    	<div id="tf2">picture background</div>
+		<br>
+		<p><b>__MSG_extOptBgColor__</b></p>
+		<input type="text" id="colorModel" class="jscolor" value="4756CA">
+		<p><b>__MSG_extOptBgPicture__</b></p>
+		<!-- 0huadiao  1xuanze -->
+		<!-- <div id="picModel1">qq music cover</div><div class="tf05">/</div> -->
+		<div class="chooseMaker" id="picModel2">google erath</div><div class="tf05">/</div>
+		<div class="chooseMaker" id="picModel3">google art</div>
+		<br><br><div class="chooseMaker" id="picModel4">500px</div class="chooseMaker"><div class="tf05">/</div>
+		<div class="chooseMaker" id="picModel5">360</div><br><br><div class="chooseMaker" id="picModel6">Unsplash</div><br><br><br>
+
+        
+	</div>
+    <div class="content"> 
+    	<p><b>__MSG_extOptBlur__</b></p>
+        <br>
+		<input type="hidden" class="single-slider3" value="23" />
+		<br>
+		<p><a href="mailto:seamanicyj@icloud.com" >__MSG_extOptEmail__</a></p>
+		<p><a href="https://chrome.google.com/webstore/detail/flpkegbinjelbodpbdojjhklbkkddmca/reviews">__MSG_extOptStars__</a></p>
+        <!-- <p><a>Want to support future development?</a></p> -->
+        <div>
+        	
+        	<img src="../image/indicator.png" id="img1" >
+        </div>
+        <div style="position: absolute;z-index:1;transform: translateY(-100%);">
+        	<canvas id="myCanvasBg" ></canvas>
+        </div>
+        <div style="position: absolute;z-index:2;transform: translateY(-100%);">
+        	<canvas id="myCanvas" >your browser does not support the canvas tag </canvas>
+        </div>
+        <p class="preview">#GU NEW TAB</p>
+	</div>
+    <button id="btn1">__MSG_extOptBtn__</button>
+    
+  <svg class="spinner" version="1.1" xmlns="http://www.w3.org/2000/svg" width="120" height="120" style="opacity: 0;">
+    <defs>
+      <clipPath id="clipPath">
+        <circle cx="60" cy="60" r="55"></circle>
+      </clipPath>
+    </defs>
+    <g class="background" transform="translate(0,0) rotate(126.01332005113363,60,60) skewX(0) scale(1,1)">
+      <g transform="translate(120, 0) scale(-1, 1)">
+        <circle class="line" cx="60" cy="60" r="50" clip-path="url(#clipPath)" style="stroke-dasharray: 120, 37; stroke-width: 10; stroke: #000;"></circle>
+        <g transform="translate(95, 45)">
+          <path class="arrow" d="M1 16L14.2 0l13.2 15.8H1z" style="fill: #000; opacity: 1;" transform="translate(0,0) rotate(0,0,0) skewX(0) scale(1,1)"></path>
+        </g>
+        <g transform="translate(25, 75) rotate(180)">
+          <path class="arrow" d="M1 16L14.2 0l13.2 15.8H1z" style="fill: #000; opacity: 1;" transform="translate(0,0) rotate(0,0,0) skewX(0) scale(1,1)"></path>
+        </g>
+      </g>
+    </g>
+    <g class="tick" transform="translate(0,0) rotate(-45,60,60) skewX(0) scale(1,1)" style="opacity: 0;">
+      <path fill="white" d="M17.977 35.553L0 16.276l5.112-4.768 17.727 19.01L52.31 0l4.93 4.76L22.83 40.39l-.316-.305-.168.156-2.98-3.194-1.465-1.416.074-.077z" transform="translate(28, 40) scale(1.15)" fill-rule="evenodd"></path>
+    </g>
+  </svg>
+    
+
+	<script type="text/javascript" src="../js/jquery-3.2.1.js" ></script>
+	<script src="../js/dynamics.min.js"></script>
+	<script src="../js/jscolor.min.js"></script>
+	<script src="./oindex.js"></script>
+</body>
+</html>

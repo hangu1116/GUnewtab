@@ -1,0 +1,68 @@
+{
+  "extName": {
+    "message": "Gu New Tab"
+  },
+  "extDescription": {
+    "message": "Personalize your default New Tab page with custom background images, colors, and your favorite mottos."
+  },
+  "extWelcome": {
+    "message": "#Welcome#"
+  },
+  "extWelP": {
+    "message": "Hello, welcome to gu new tab!💖"
+  },
+  "extWelBtn": {
+    "message": " continue "
+  },
+  "extWelP2": {
+    "message": "You can change your motto/todo in options anytime. Have a nice trip~ "
+  },
+  "extWelBtn2": {
+    "message": " start "
+  },
+  "extOptions": {
+    "message": "options"
+  },
+  "extOptTitle": {
+    "message": "#Options#"
+  },
+  "extOptName": {
+    "message": "Your Name"
+  },
+  "extOptMotto": {
+    "message": "bespoke motto"
+  },
+  "extOptFontColor": {
+    "message": "Font Color"
+  },
+  "extOptFontSize": {
+    "message": "Font Size"
+  },
+  "extOptFontWeight": {
+    "message": "Font Weight"
+  },
+  "extOptType": {
+    "message": "Font Type"
+  },
+  "extOptBgModel": {
+    "message": "Select a background model"
+  },
+  "extOptBgColor": {
+    "message": "background color"
+  },
+  "extOptBgPicture": {
+    "message": "picture background:pic source"
+  },
+  "extOptBlur": {
+    "message": "blur"
+  },
+  "extOptEmail": {
+    "message": "Found a bug? Have a wish?💌"
+  },
+  "extOptStars": {
+    "message": "Give me 5 stars on Chrome Webstore🌟Thanks!"
+  },
+  "extOptBtn": {
+    "message": " save "
+  }
+}

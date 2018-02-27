@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+body{
+	font-family: Microsoft YaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #000;
+  padding: 0 8% 0% 8%;
+}
+h1{
+	font-size: 40px;
+  line-height: 60px;
+}
+::selection {
+    background:#d3d3d3; 
+    color:#555;
+}
+input{
+	width: 70%;
+	height: 22px;
+	padding-left: 9px;
+  border: 1px solid #000;
+  font-size:14px;
+  color: #000;
+  outline:none;
+}
+input:focus{
+	border:1px solid #4756CA;
+}
+textarea{
+  width: 69%;
+  padding-left: 9px;
+  border: 1px solid #000;
+  font-size:16px;
+  color: #000;
+  outline:none;
+  resize: none;
+  font-family: Microsoft YaHei,"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+textarea:focus{
+  border:1px solid #4756CA;
+}
+select {
+  /*很关键：将默认的select选择框样式清除*/
+  /*appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;*/
+
+  width: 73%;
+  height: 26px;
+  padding-left: 9px;
+  border: 1px solid #000;
+  font-size:14px;
+  color: #000;
+  outline:none;
+}
+
+a,a:link,a:visited,a:active{
+  color: #333;
+  text-decoration:none;
+  /*border-bottom: 2px solid rgba(0,0,0,0); */
+}
+a:hover{
+  text-decoration:underline;
+  /*border-bottom: 2px solid #333;*/
+}
+p{
+	font-size: 14px;
+}
+img{
+	width: 85%;
+}
+button{
+ width:20% !important;
+  height: 40px ;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 100;
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+  outline:none;
+
+  margin: 40px 0 0 40% ;
+}
+button:hover{
+  background-color: #fff;
+  color: #000;
+}
+button:active{
+  background-color: #000;
+}
+
+/*滚动条 start*/  
+::-webkit-scrollbar {  
+  width: 15px;
+  height: 100px;
+}  
+/*定义滚动条轨道*/  
+::-webkit-scrollbar-track {
+  background: #fff;  
+}  
+/*定义滑块*/  
+::-webkit-scrollbar-thumb { 
+  background-color: #000;
+  border-right: 10px solid #fff; 
+}  
+::-webkit-scrollbar-track-piece{
+
+  background-color: #000;
+  margin: 10% 0; 
+  border-left: 2px solid #fff;
+  border-right: 12px solid #fff;
+}
+
+.content{
+	float: left;
+	width: 28%;
+	padding-left:5%;
+	text-align:left;
+}
+.tf05{
+	color: #4756CA;
+  font-size: 18px;
+  padding: 0 5px ;
+  float: left;
+}
+.chooseYes{
+  width: auto;
+  float: left;
+  font-size: 16px;
+}
+.chooseNo{
+  width: auto;
+  float: left;
+  font-size: 16px;
+}
+.chooseNo:before{
+  position: absolute;
+  content:'';
+  width:60px;
+  height: 10px;
+  border-bottom: 3px solid #FF5151;
+}
+.preview{
+  position: absolute;
+  z-index:3;
+  transform: translateY(-100%);
+  text-align: center;
+  white-space:nowrap;
+  text-overflow:ellipsis;overflow:hidden;
+}
+.slider-container {
+  width: 100%;
+}
+.slider-container .back-bar {
+  height: 10px;
+  position: relative;
+}
+.slider-container .back-bar .selected-bar {
+  position: absolute;
+  height: 100%;
+}
+.slider-container .back-bar .pointer {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  cursor: col-resize;
+  opacity: 1;
+  z-index: 2;
+}
+.slider-container .back-bar .pointer.last-active {
+  z-index: 3;
+}
+.slider-container .back-bar .pointer-label {
+  position: absolute;
+  top: -17px;
+  font-size: 8px;
+  background: white;
+  white-space: nowrap;
+  line-height: 1;
+}
+.slider-container .back-bar .focused {
+  z-index: 10;
+}
+.slider-container .clickable-dummy {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.slider-container .scale {
+  top: 2px;
+  position: relative;
+}
+.slider-container .scale span {
+  position: absolute;
+  height: 5px;
+  border-left: 1px solid #999;
+  font-size: 0;
+}
+.slider-container .scale ins {
+  font-size: 9px;
+  text-decoration: none;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  color: #999;
+  line-height: 1;
+}
+.slider-container.slider-readonly .clickable-dummy,
+.slider-container.slider-readonly .pointer {
+  cursor: auto;
+}
+.theme-green .back-bar {
+  height: 5px;
+  border-radius: 2px;
+  background-color:#4756CA;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffdddddd', GradientType=0);
+}
+.theme-green .back-bar .selected-bar {
+  border-radius: 2px;
+  background-color: #4756CA;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbdfade', endColorstr='#ff76fabc', GradientType=0);
+}
+.theme-green .back-bar .pointer {
+  width: 14px;
+  height: 14px;
+  top: -5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #AAA;
+  background-color: #e7e7e7;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffdddddd', GradientType=0);
+}
+.theme-green .back-bar .pointer-label {
+  color: #999;
+}
+.theme-green .back-bar .focused {
+  color: #333;
+}
+.theme-green .scale span {
+  border-left: 1px solid #e5e5e5;
+}
+
+.spinner{
+  position: fixed; 
+  z-index: 9; 
+left: 0px;  
+right: 0px;  
+bottom: 0px;  
+top: 0px;  
+margin: auto; 
+}
+.line {
+  stroke: #FF5151;
+  stroke-width: 10;
+  stroke-dasharray: 120, 37;
+  stroke-linecap: square;
+  stroke-linejoin: round;
+  fill: transparent;
+}
+.arrow {
+  fill: #FF5151;
+}
+.tick {
+  opacity: 0;
+}
