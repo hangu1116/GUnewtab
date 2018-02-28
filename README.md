@@ -1,6 +1,7 @@
 Gu New Tab
 =========
 ![](https://github.com/hangu1116/GuNewTab/raw/master/image/icon128.png) 
+----------
 v0.1.6.1 (2018/2/28)
 ----------
 - 可直接在新标签页面修改motto/todo
