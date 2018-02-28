@@ -1,4 +1,4 @@
-![](https://github.com/hangu1116/GuNewTab/raw/master/image/icon128.png) 
+<img url("https://github.com/hangu1116/GuNewTab/raw/master/image/icon128.png") height="18px"> 
 Gu New Tab
 =========
 v0.1.6.0 (2018/2/26)
