@@ -1,3 +1,4 @@
+![](https://github.com/hangu1116/GuNewTab/raw/master/image/logo.png) 
 Gu New Tab
 =========
 v0.1.6.0 (2018/2/26)
