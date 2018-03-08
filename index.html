@@ -20,7 +20,7 @@
 		<div class="content">
 			<h1><b>__MSG_extWelcome__</b></h1>
 			<p>__MSG_extWelP2__</p>
-		    <input type="text" id="bepMain" placeholder="What's your motto?">
+		    <input type="text" id="bepMain" placeholder="What's your motto/todo?">
 		    <br><br>
 		    <button id="btn2">__MSG_extWelBtn2__</button>
 		</div>
@@ -30,11 +30,18 @@
 		<div id="bgBlur"></div>
 		<div id="maint">
 			<div class="maintext" id="maintext"></div>
+			<input type="text" id="maintextChange" class="maintext" autofocus="autofocus" style="visibility:hidden;
+	background-color: rgba(71,86,202,0);
+	border-color:rgba(0,0,0,0);padding-left:0px;">
+	<span class="maintextTip" id="maintextTipOne">__MSG_extmaintextTipOne__</span>
+	<span class="maintextTip" id="maintextTipTwo">__MSG_extmaintextTipTwo__</span>
+
 		    <div class="goodtext" id="goodtext"></div>
 		</div>
 		<a href="#" class="picInfoUrl">from<br>author</a>
         <!-- <a href="#" class="todoUrl">bookmarks</a> -->
-        <div class="bgPic"></div>
+        <div class="bgPrPic"></div>
+        <img class="bgPic" id="bgPic">
 	</div>
 		
 	<div class="leftdown">
@@ -42,6 +49,7 @@
 	</div>
 
 <script type="text/javascript" src="./js/jquery-3.2.1.js" ></script>
+<script type="text/javascript" src="./js/maincolor.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>

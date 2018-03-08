@@ -37,15 +37,22 @@ button{
 	height: 40px;
 	text-align: center;
 	font-size: 24px;
-	font-weight: 100;
-	border: 1px solid #000;
+	font-weight: 300;
+	border: 2px solid #000;
 	background-color: #000;
 	color: #fff;
 	outline:none;
+	border-radius: 20px;
 }
 button:hover{
 	background-color: #fff;
+	font-weight: 500;
 	color: #000;
+}
+button:active{
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 26px;
 }
 a{
 	color: #fff;
@@ -140,6 +147,8 @@ p{
     background-color: rgba(0,0,0,0.4);
 }
 .maintext{
+	width: auto;
+	height: auto;
 	position: absolute;
 	top: 45%;
 	left: 50%;
@@ -147,6 +156,39 @@ p{
 	font-size: 70px;
 	font-weight: 600;
 	color: #fff;
+	border-radius: 16px;
+	text-align: center;
+
+}
+.maintextTip{
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-size: 18px;
+	line-height: 30px;
+	width: 240px;
+	font-weight: 900;
+	color: #fff;
+	border-radius: 16px;
+	text-align: center;
+	background-color: rgba(71,86,202,0.8);
+	visibility: hidden;
+
+}
+.maintextTip:before{
+	content:"";
+	display: block;
+    position: absolute;  /*日常绝对定位*/
+    left:calc(50% - 5px);
+    width: 0;
+    height: 0;
+    border:10px solid transparent;
+    top: -20px;
+    border-bottom-color: rgba(71,86,202,0.8);
+
 }
 .goodtext{
 	position: absolute;
@@ -173,16 +215,23 @@ p{
 	top: 2%;
 	right: 2%;
 }
-.bgPic{
+.bgPrPic{
 	position: absolute;
-	width: 110%;
-	height: 110%;
-    left:-5%;
-    top:-5%;
+	width: 100%;
+	height: 100%;
     background-size: cover;
     background-position: center;
     background-clip: content-box;
     z-index: -2;
+}
+.bgPic{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+    object-fit: cover; 
+
+    z-index: -2;
+    opacity: 0;
 }
 /*============================= left down ===========================*/
 .optionsUrl{

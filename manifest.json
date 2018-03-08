@@ -2,22 +2,25 @@
 {  
   "manifest_version": 2,
   "name": "__MSG_extName__",  
-  "version": "0.1.6.0", 
+  "version": "0.1.6.1", 
   "default_locale" : "en", 
   "description": "__MSG_extDescription__",  
   "icons": {
         "128": "./image/icon128.png"  
     },  
   "browser_action": {},
-  "permissions": [  
-        "*://wallpaper.apc.360.cn/*"  ,
+  "permissions": [ 
+  "tabs", 
+        "*://wallpaper.apc.360.cn/*",
         "*://www.google.com/*",
         "*://www.gstatic.com/*",
-        "*://api.unsplash.com/*"
+        "*://api.unsplash.com/*",
+        "https://api.flickr.com/*"
     ],
   "author": "cyj",
   "chrome_url_overrides": {                 
         "newtab": "./index.html"  
     },  
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "options_page": "./option/options.html"
 } 
