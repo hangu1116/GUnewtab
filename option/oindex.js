@@ -615,6 +615,7 @@ function BlurStack()
 	this.a = 0;
 	this.next = null;
 }
+//jrange滑杆控件
 ;
 (function($, window, document, undefined) {
 	'use strict';
@@ -622,14 +623,6 @@ function BlurStack()
 	var jRange = function() {
 		return this.init.apply(this, arguments);
 	};
-	var a;
-	if(window.innerWidth<540){
-		a=window.innerWidth*0.52;
-	}else if(window.innerWidth<1000){
-		a=window.innerWidth*0.24;
-	}else{
-		a=window.innerWidth*0.17;
-	}
 	jRange.prototype = {
 		defaults: {
 			onstatechange: function() {},
@@ -639,7 +632,7 @@ function BlurStack()
 			step: 1,
 			format: '%s',
 			theme: 'theme-green',
-			width: a,
+			width:400,
 			disable: false
 		},
 		template: '<div class="slider-container">\
@@ -960,138 +953,32 @@ var Detector = function() {
     this.detect = detect;
 };
 
-var spinner = document.querySelector('.spinner')
-var background = document.querySelector('.background')
-var line = document.querySelector('.line')
-var tick = document.querySelector('.tick')
-var arrows = document.querySelectorAll('.arrow')
 
-function start() {
-  // Show the spinner
-  dynamics.animate(spinner, {
-    opacity: 1
-  }, {
-    duration: 250,
-    complete: animateLine
-  })
 
-  // Fake the syncing success after 2.5s for this demo
-  dynamics.setTimeout(animateSuccess, 2600)
+//===================================== 渐变色
+function Grad(direction,count,point){
+	this.direction = direction + 'deg'; //45deg
+	this.count = count;
+	this.grtPoint = function(){
+		var result='';
+		for(var i=0; i<this.count;i++){
+        	result+='#'+point[i][0]+" "+point[i][1]+'%';
+			if(i<this.count-1){result+=',';}
+		}
+		return result;
+	}
+	this.getCode = function(){
+
+		var result = 'linear-gradient('+this.direction+','+this.grtPoint()+')';
+		return result;
+	}
+	this.setGrad = function(){
+		$('.gradMainDiv').css('background-image',this.getCode());
+		console.log(this.getCode());
+	}
+	
 }
-
-// This rotate the background (circle+arrows) indefinitely
-function rotate() {
-  dynamics.animate(background, {
-    rotateZ: 180,
-    rotateC: 60
-  }, {
-    type: dynamics.linear,
-    duration: 500,
-    complete: function() {
-      dynamics.css(background, { rotateZ: 0 })
-      rotate()
-    }
-  })
-}
-
-// Animate the line
-function animateLine() {
-  dynamics.animate(line, {
-    strokeDasharray: "40, 117"
-  }, {
-    type: dynamics.easeInOut,
-    duration: 400,
-    friction: 700,
-    complete: function() {
-      dynamics.animate(line, {
-        strokeDasharray: "120, 37"
-      }, {
-        type: dynamics.easeInOut,
-        duration: 800,
-        complete: animateLine
-      })
-    }
-  })
-}
-
-// Animate the success state
-function animateSuccess() {
-  // First, we animate the line to form a whole circle
-  dynamics.animate(line, {
-    strokeDasharray: "157, 0",
-  }, {
-    type: dynamics.easeIn,
-    duration: 500,
-    friction: 200,
-    complete: function() {
-      // Then we change the line color and make it a full circle
-      // by increasing the strokeWidth
-      dynamics.animate(line, {
-        strokeWidth: 100,
-        stroke: "#000"
-      }, {
-        friction: 200,
-        duration: 300
-      })
-
-      // // We hide the arrows
-      dynamics.animate(arrows, {
-        fill: "#000",
-        translate: 5.5,
-        scale: 0.5
-      }, {
-        friction: 200,
-        duration: 300
-      })
-
-      // Animate the tick icon
-      dynamics.animate(tick, {
-        opacity: 1,
-        rotateZ: 0,
-        rotateC: 60
-      }, {
-        type: dynamics.spring,
-        friction: 300,
-        duration: 1000,
-        delay: 300
-      })
-
-      // Restart the whole animation for this demo
-      dynamics.setTimeout(restart, 1500)
-    }
-  })
-}
-
-// Restart the whole animation
-function restart() {
-  dynamics.animate(spinner, {
-    opacity: 0
-  }, {
-    duration: 250,
-    complete: function() {
-      // Reset css properties to originals
-      dynamics.css(tick, {
-        opacity: 0,
-        rotateZ: -45,
-        rotateC: 60
-      })
-      dynamics.css(line, {
-        strokeDasharray: "120, 37",
-        stroke: "#000",
-        strokeWidth: 10
-      })
-      dynamics.css(arrows, {
-        opacity: 1,
-        fill: "#000",
-        scale: 1
-      })
-
-      // Start!
-      // dynamics.setTimeout(start, 500)
-    }
-  })
-}
-
+//===================================== preview 的canvas函数
 function clearCanvas()
 {  
 	var nWidth = document.getElementById('img1').naturalWidth,
@@ -1117,6 +1004,7 @@ function clearCanvas()
     ctx.drawImage(img,0,0.5*nHeight,nWidth,0.5*nHeight,0,0,x,0.5*y); 
 
 	stackBlurCanvasRGBA('myCanvas',0,0,x,y,$('.single-slider3').val());
+
 }
 
 function placeholderPic(){
@@ -1167,10 +1055,31 @@ function placeholderPic(){
 window.onresize=function(){
   placeholderPic();
 }
-
+//获取随机十六进制颜色
+function getRanCol(){
+	var colorarr=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+	var r='';
+	for (var i=0;i<6;i++){
+		r+= colorarr[parseInt(Math.random()*16)];
+	}
+	return r;
+}
 // 数据初始化函数
 function getInfor(){
 	placeholderPic();
+	var point = [[getRanCol(),0],[getRanCol(),80]];
+    var grad= new Grad(45,2,point);
+    grad.setGrad();
+  
+	$('.single-slider4').jRange({
+		from: 0,
+		to: 100,
+		step: 2,
+		scale: [0,20,40,60,80,100],
+		format: '%s',
+		showLabels: false,
+		showScale: false
+	});
 
     var infoA=window.localStorage.getItem('user');
     var blur=infoA[0]+infoA[1];
@@ -1196,10 +1105,14 @@ function getInfor(){
 		$('#tf1').attr('class','chooseYes');
 		$('#tf2').attr('class','chooseNo');
 		$('#tf1').val(0);
+		$('#colorBg').css('display','block')
+		$('#picBg').css('display','none')
 	}else{
 		$('#tf2').attr('class','chooseYes');
 		$('#tf1').attr('class','chooseNo');
 		$('#tf1').val(1);
+		$('#picBg').css('display','block')
+		$('#colorBg').css('display','none')
 	}
     var colorModel='';
     for(var i=1;i<7;i++){
@@ -1210,12 +1123,12 @@ function getInfor(){
     for(var i=7;i<infoA.length;i++){
         picModel  = picModel+infoA[i];
     }
-	for(var i=2;i<7;i++){
+	for(var i=2;i<picModel.length+2;i++){
 		$('#picModel'+i).val(picModel[(i-2)]);
 		if($('#picModel'+i).val()==='1'){
-		$('#picModel'+i).attr('class','chooseYes');
+		$('#picModel'+i).attr('class','choYes');
 	    }else{
-		$('#picModel'+i).attr('class','chooseNo');
+		$('#picModel'+i).attr('class','choNo');
 	    }
 	}
     
@@ -1283,29 +1196,42 @@ function getInfor(){
     if(window.localStorage.getItem('bepMain')){
     	$('#bepMain').val(window.localStorage.getItem('bepMain').replace("<br>","\n"));	
     }
+
+    $('.slider-container').removeAttr('style');
+    $('.slider-container').eq(0).css('width','calc(70% + 11px)');
+    $('.single-slider').jRange('setValue', fontSize);
+    $('.slider-container').eq(1).css('width','calc(70% + 11px)');
+    $('.single-slider2').jRange('setValue', infoN);
+
     clearCanvas();
 	saveInfor();
 }
+
 function clickFtfh(object){
 	if($(object).val()==='1'){
-		$(object).attr('class','chooseNo');
+		$(object).attr('class','choNo');
 		$(object).val('0');
 	}else{
-		$(object).attr('class','chooseYes');
+		$(object).attr('class','choYes');
 		$(object).val('1');
 	}
 }
+
 function saveInfor(){
 
 	$('#tf1').on('click',function(){
 		$('#tf1').attr('class','chooseYes');
 		$('#tf2').attr('class','chooseNo');
 		$('#tf1').val(0);
+		$('#colorBg').css('display','block')
+		$('#picBg').css('display','none')
 	});
 	$('#tf2').on('click',function(){
 		$('#tf2').attr('class','chooseYes');
 		$('#tf1').attr('class','chooseNo');
 		$('#tf1').val(1);
+		$('#picBg').css('display','block')
+		$('#colorBg').css('display','none')
 	});
 	
     // $('#picModel1').on('click',function(){clickFtfh('#picModel1');});
@@ -1314,6 +1240,7 @@ function saveInfor(){
     $('#picModel4').on('click',function(){clickFtfh('#picModel4');});
     $('#picModel5').on('click',function(){clickFtfh('#picModel5');});
     $('#picModel6').on('click',function(){clickFtfh('#picModel6');});
+    $('#picModel7').on('click',function(){clickFtfh('#picModel7');});
 
     $('.back-bar').on('click',function(){
 		$('.preview').css('font-size',$('.single-slider').val()+"px");
@@ -1358,16 +1285,22 @@ function saveInfor(){
         window.localStorage.setItem('user',blur+$('#userName').val());
         
 		var w='';
-		for(var i=2;i<7;i++){
+		for(var i=2;i<8;i++){
 			w+=$('#picModel'+i).val();
 		}
 		window.localStorage.setItem('bgstyle',$('#tf1').val()+$('#colorModel').val()+w);
 		var val=$('#bepMain').val().replace("\n","<br>");
         window.localStorage.setItem('bepMain',val);
         window.localStorage.setItem('fontstyle',$('#fontColor').val()+$('.single-slider2').val()+$('#fontType').val()+$('.single-slider').val());
-		start();
-    	rotate();
+	   
+	    $('#btn1').css('animation','myfirst 2s');
+	    var setA=$('#btn1').html();
+	    setTimeout(function(){$('#btn1').html('Success');},500);
+	    setTimeout(function(){$('#btn1').html(setA);},2000);
+
+
 		// alert('success!🚀');
+		
 	});
 }
 $('document').ready(getInfor());
