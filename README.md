@@ -2,7 +2,13 @@ Gu New Tab
 =========
 ![](https://github.com/hangu1116/GuNewTab/raw/master/image/icon128.png) 
 ----------
-v0.1.6.2 (2018/3/8)
+v0.1.6.2 (2018/3/14)
+----------
+- 修复图片长时间加载的bug
+- 修复磨砂滤镜下的黑边bug
+- 增加localStorage的安全封装
+
+v0.1.6.1 (2018/3/8)
 ----------
 - 可直接在新标签页面修改motto/todo
 - 使用颜色预加载模式
